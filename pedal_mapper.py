@@ -48,7 +48,7 @@ class PedalMapper:
         self.btn_value_to_keys(value)
 
     def newTimer(self, value):
-        self.t = Timer(0.2, self.clear_sequences_and_send_value, [value])
+        self.t = Timer(0.4, self.clear_sequences_and_send_value, [value])
 
     def get_event(self):
         # We're non-blocking, so wait for a poll. This could just be changed to
@@ -133,8 +133,8 @@ if __name__ == "__main__":
         middle_keys=[KeyCombo(mods=[e.KEY_LEFTALT], hold=True)], # press ALT and hold it so we can select the right screen
         right_keys=[KeyCombo(mods=[e.KEY_TAB])],
         #dbl_left_keys=[KeyCombo(mods=[e.KEY_LEFTCTRL], keys=[e.KEY_A])], # select all
-        dbl_right_keys=[KeyCombo(mods=[e.KEY_LEFTCTRL], keys=[e.KEY_W])], # close window
-        dbl_middle_keys=[KeyCombo(mods=[e.KEY_LEFTALT, e.KEY_TAB])], # press ALT and TAB to switch between screens immediately
+        dbl_middle_keys=[KeyCombo(mods=[e.KEY_LEFTCTRL], keys=[e.KEY_W])], # close window
+        dbl_right_keys=[KeyCombo(mods=[e.KEY_LEFTALT, e.KEY_TAB])], # press ALT and TAB to switch between screens immediately
     )
 
     # Loop to get events and handle them accordingly.
